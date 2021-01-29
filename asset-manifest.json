@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/linktree-2/static/css/main.3c84a249.chunk.css",
+    "main.js": "/linktree-2/static/js/main.4807858f.chunk.js",
+    "main.js.map": "/linktree-2/static/js/main.4807858f.chunk.js.map",
+    "runtime-main.js": "/linktree-2/static/js/runtime-main.e5db595e.js",
+    "runtime-main.js.map": "/linktree-2/static/js/runtime-main.e5db595e.js.map",
+    "static/js/2.bbde9e62.chunk.js": "/linktree-2/static/js/2.bbde9e62.chunk.js",
+    "static/js/2.bbde9e62.chunk.js.map": "/linktree-2/static/js/2.bbde9e62.chunk.js.map",
+    "static/js/3.0eaebab4.chunk.js": "/linktree-2/static/js/3.0eaebab4.chunk.js",
+    "static/js/3.0eaebab4.chunk.js.map": "/linktree-2/static/js/3.0eaebab4.chunk.js.map",
+    "index.html": "/linktree-2/index.html",
+    "static/css/main.3c84a249.chunk.css.map": "/linktree-2/static/css/main.3c84a249.chunk.css.map",
+    "static/js/2.bbde9e62.chunk.js.LICENSE.txt": "/linktree-2/static/js/2.bbde9e62.chunk.js.LICENSE.txt",
+    "static/media/gambar-sarip-2.0d3bc1c5.jpg": "/linktree-2/static/media/gambar-sarip-2.0d3bc1c5.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e5db595e.js",
+    "static/js/2.bbde9e62.chunk.js",
+    "static/css/main.3c84a249.chunk.css",
+    "static/js/main.4807858f.chunk.js"
+  ]
+}
