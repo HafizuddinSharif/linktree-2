@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import BigCard from './BigCard/BigCard'
+import Logo from './Logo/Logo'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  state = {
+      number: "Lol"
+    }
+
+  switchNameHandler = (yeah) => {
+    // console.log('Clicked')
+
+    this.setState( {
+      number: yeah
+    })
+
+    
+  }
+
+  render() {
+    return (
+      <div className="App h-screen">
+        <div className="">
+          <Logo />
+          <BigCard />
+        </div>
+      </div>
+    );
+  }
+  
 }
 
 export default App;
