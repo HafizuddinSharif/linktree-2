@@ -12,5 +12,5 @@ TailwindCSS
 At the moment, this static only have links and all.\
 If you like to add more stuff, feel free to do pull requests.
 
-###Click here to see my example!!
+##Click here to see my example!!
 https://hafizuddinsharif.github.io/linktree-2/
