@@ -1,0 +1,68 @@
+## TASK 1.1
+
+States:
+Room(x)             // x = a room in Minobot's Labyrinth
+Connected(x, y)     // x room is connected to y room
+Location(o, y)      // object or person, o, in y room
+Defeated(x)         // x is defeated
+Holding(x, o)       // someone, x, holding an object, o
+Object(o)           // o is a pickable object
+Sword(o)
+Minobot(x)
+BoTheseus(x)
+
+Initial State:
+BoTheseus(BT), Minobot(MT), Sword(SW), Object(SW), 
+Location(x, E), Location(y, L), Location(o, D),
+Connected(F, E), Connected(E, B), Connected(B, C), Connected(B, A), Connected(C, D), Connected(A, L),
+Connected(E, F), Connected(B, E), Connected(C, B), Connected(A, B), Connected(D, C), Connected(L, A),
+Room(A), Room(B), Room(C), Room(D), Room(E), Room(F), Room(L)
+
+Goal State:
+Location(BT, E), Defeated(MT)
+
+## TASK 1.2
+
+Actions:
+
+Action(Move(x, q, w),
+Precond: BoTheseus(x), Room(q), Room(w), Connected(q, w), Location(x, q)
+Effect : Location(x, w), not Location(x, q))
+
+Action(PickUp(x, o),
+Precond: BoTheseus(x), Object(o), Location(x, q), Location(o, q)
+Effect : Holding(x, o), not Location(o, q))
+
+Action(Slay(x, y)
+Precond: BoTheseus(x), Minobot(y), not Defeated(y), Holding(x, o), Sword(o), Location(x, q), Location(y, q), Room(q)
+Effect : Defeated(y))
+
+## TASK 1.3
+
+x = BT
+L = r
+S = s
+A = r'
+B = r''
+
+g1 = Defeated(MT)
+Choose: Slay(x, MT)
+g2 = Location(x, r), Location(MT, r), Holding(x, s), Sword(s), BoTheseus(x), Minobot(MT), Room(r),
+     (x != MT), (s != L), (x != L), (x != s), 
+Choose: Move(x, r', r)
+g3 = Location(MT, r), Holding(x, s), Sword(s), BoTheseus(x), Minobot(MT), Room(r)
+     Location(x, r'), Room(r')
+Choose: PickUp(x, s)
+g4 = Location(MT, r), Holding(x, s), Sword(s), BoTheseus(x), Minobot(MT), Room(r)
+     Location(x, r'), Room(r'),
+     Location(s, r'), Object(s)
+Choose: Move(x, r'', r')
+g5 = Location(MT, r), Holding(x, s), Sword(s), BoTheseus(x), Minobot(MT), Room(r)
+     Room(r')
+     Location(s, r'), Object(s),
+     Location(x, r'')
+
+g5 satisfies initial state by substituting
+{x = BT, r = L, r' = A, r'' = B, s = S}
+
+Plan: Move(BT, B, A), PickUp(BT, S), Move(BT, r', r), Slay(BT, MT)
